@@ -1026,7 +1026,7 @@ struct ChainSubtable
   template <typename T>
   friend struct Chain;
 
-  unsigned int get_size () const     { return length; }
+  size_t get_size () const     { return length; }
   unsigned int get_type () const     { return coverage & 0xFF; }
   unsigned int get_coverage () const { return coverage >> (sizeof (HBUINT) * 8 - 8); }
 
@@ -1236,7 +1236,7 @@ struct Chain
       c->reverse_buffer ();
   }
 
-  unsigned int get_size () const { return length; }
+  size_t get_size () const { return length; }
 
   template <typename context_t, typename ...Ts>
   typename context_t::return_t dispatch (context_t *c, Ts&&... ds) const
